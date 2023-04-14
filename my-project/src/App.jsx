@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import SharedLayout from './pages/SharedLayout'
 import './App.css'
 
 
@@ -8,9 +8,13 @@ function App() {
 
 
   return (
-    <div className="App">
-      <Sacola />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<SharedLayout />}> 
+          
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
