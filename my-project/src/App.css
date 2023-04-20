@@ -11,11 +11,13 @@
   --green-500: #00875f;
   --green-300: #00B37E;
   --red-500: #F75A68;
-
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 li{
   list-style-type: none;
 }
+
+
 
 
