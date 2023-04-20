@@ -6,16 +6,19 @@ const Payment = () => {
   const [data, setData] = useAtom(dataAtom);
   const [cardNumber, setCardNumber] = useAtom(userNumberCard);
   const [cardName, SetCardName] = useAtom(userCardName)
-  const [dateCard, setDateCard] = useAtom(userDateCard) 
+  const [dateCard, setDateCard] = useAtom(userDateCard)
+  const [isValid, setIsValid] = useState(true);
 
-  
+  const span = document.querySelectorAll('.span')
+
   const handleSubmit = (e) =>{
+    validateForm()
     e.preventDefault()
   } 
 
   const validateForm = (e) =>{
+    cardNumber.length != 16 ? setIsValid(false) : setIsValid(true)  
   } 
-
 
 
   return (
@@ -25,11 +28,14 @@ const Payment = () => {
         <h1 className="text-2xl">Cartão de crédito</h1>
         <label className="flex flex-col mt-4 text-[#515151]">
           Número:
-          <input  onChange={(e)=> setCardNumber(e.target.value)} placeholder="0000 0000 0000 0000" className="h-[2.5rem] p-3 rounded-md border-2 border-[#d6d6d6] border-solid z" type="text" name="name" />
+          <input onChange={(e)=> setCardNumber(e.target.value)} placeholder="0000 0000 0000 0000"  className={`h-[2.5rem] p-3 rounded-md border-2 ${isValid ? 'border-[#d6d6d6]' : 'border-red-500'} border-solid`} 
+          type="text" />
+          {isValid ? null: <span className="text-red-500">insira um número de cartão válido</span> }
         </label>
         <label className="flex flex-col mt-4 text-[#515151]">
           Nome do titular do cartão:
           <input onChange={(e) =>SetCardName(e.target.value)} placeholder="Nome impresso no cartão" className=" p-3 rounded-md border-2 border-[#d6d6d6] border-solid h-[2.5rem]" type="text" name="name" />
+          <span className="">insira um nome cartão válido</span>
         </label>
         
         <div className="flex gap-4 mt-4 text-[#515151]">
