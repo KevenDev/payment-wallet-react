@@ -1,3 +1,5 @@
-import { atom } from "jotai";   
+import { atom } from "jotai";
+  
 
-export const dataAtom = atom([])
+const localData = JSON.parse(localStorage.getItem('data'))
+export const dataAtom = atom(localData || [])
