@@ -44,7 +44,7 @@ const Wallet = () =>{
                   </div>
                 ))
               }</div>
-           <div className="md:shadow-md flex flex-col px-4 py-4 text-lg md:w-[70%] md:h-[60%] md:text-xl">
+           <div className="md:shadow-md flex flex-col px-4 py-4 text-lg md:w-[70%] md:h-[70%] md:text-xl">
              <div className='flex justify-between'>
                <p>Produtos</p>
                <p>R$ {data[0].subTotal}</p>
@@ -62,7 +62,7 @@ const Wallet = () =>{
               <p>R$ {data[0].total}</p>
              </div>
           <div className='md:justify-center md:flex md:w-full flex justify-center items-center md:text-xl' >
-          <Link to='/payment'> <button className='bg-[#9222DC] h-[3.5rem] w-[80vw] rounded-xl md:w-[50rem] text-white p-3 text-xl mt-5'>Seguir para o pagamento</button> </Link>
+          <Link to='/payment'> <button className='bg-[#9222DC] h-[3.5rem] w-[80vw] rounded-xl md:w-[40vw]  text-white p-3 text-xl mt-5'>Seguir para o pagamento</button> </Link>
           </div>
           </div>
           </>
