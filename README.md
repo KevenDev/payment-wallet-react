@@ -1,3 +1,3 @@
 # payment-wallet-react
 
-prototype for mobile devices
+Mobile prototype, consuming a product api with price and description with react routes and hooks
