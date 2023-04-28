@@ -43,9 +43,9 @@ const Payment = () => {
   } 
 
   return (
-    <section className="w-screen h-[90vh] flex flex-col mt-2">
+    <section className=" w-screen h-[90vh] flex flex-col mt-2">
     <form onSubmit={handleSubmit}>
-      <div className=" md:w-[30%] md:mx-auto md:mt-2 w-screen h-[60%]  border-2 border-[#CCCCCC] border-solid p-4 font-mediun">
+      <div className="md:border-none md:w-[30%] md:mx-auto md:mt-2 w-screen h-[60%]  border-2 border-[#CCCCCC] border-solid p-4 font-mediun">
         <h1 className="text-2xl">Cartão de crédito</h1>
         <label className="md:mt-5 flex flex-col mt-1 text-[#515151]">
           Número:
@@ -53,28 +53,28 @@ const Payment = () => {
           type="text" />
           {isValid ? null: <span className="text-red-500">insira um número de cartão válido</span> }
         </label>
-        <label className="flex flex-col mt-4 text-[#515151]">
+        <label className=" md:mt-5 flex flex-col mt-4 text-[#515151]">
           Nome do titular do cartão:
           <input onChange={(e) =>SetCardName(e.target.value)} placeholder="Nome impresso no cartão" className=" p-3 rounded-md border-2 border-[#d6d6d6] border-solid h-[2.5rem]" type="text" name="name" />
           {isValid ? null: <span className=" text-red-500">insira um número de cartão válido</span> }
         </label>
         
         <div className="flex gap-4 mt-4 text-[#515151]">
-          <label>
+          <label className="md:mt-3">
             Data de validade:
-            <input maxLength={4} onChange={(e)=> setDateCard(e.target.value)} placeholder="MM/AA" className="h-[2.5rem] p-3 rounded-md border-2 border-[#d6d6d6] border-solid  w-[10rem]" type="text" name="name" />
+            <input maxLength={4} onChange={(e)=> setDateCard(e.target.value)} placeholder="MM/AA" className="md:h-[2.2rem] h-[2.5rem] p-3 rounded-md border-2 border-[#d6d6d6] border-solid  w-[10rem]" type="text" name="name" />
             {isValid ? null: <span className="text-red-500">insira um número de cartão válido</span> }
           </label>
-          <label>
+          <label className="md:mt-3">
             Código CVV:
-            <input maxLength={3} onChange={(e)=>setCvc(e.target.value)} placeholder="000" className="h-[2.5rem] rounded-md border-2 border-[#d6d6d6] border-solid p-3  md:w-[8rem] w-[10rem]" type="text" name="name" />
+            <input maxLength={3} onChange={(e)=>setCvc(e.target.value)} placeholder="000" className="md:h-[2.2rem] h-[2.5rem] rounded-md border-2 border-[#d6d6d6] border-solid p-3  w-[10rem]" type="text" name="name" />
             {isValid ? null: <span className="text-red-500">insira um número de cartão válido</span> }
           </label>
         </div>
       </div>
       {data.length > 0 && (
         <>
-          <div className=" md:w-[31%] md:h-[20vh] md:justify-center md:mx-auto flex flex-col px-4 py-4 text-lg ">
+          <div className=" md:w-[30%] md:h-[20vh] md:justify-center md:mx-auto flex flex-col px-4 py-4 text-lg ">
             <div className="flex justify-between">
               <p>Produtos</p>
               <p>R$ {data[0].subTotal}</p>
