@@ -31,20 +31,20 @@ const Wallet = () =>{
   }
     return(
       <>
-        <section className="md:h-[100vh] md:grid md:place-items-center w-screen h-full flex-column md:mt-6 mt-4  ">
+        <section className=" md:max-w-md md:h-screen sm:h-screen md:m-auto md:justify-center w-full flex justify-center items-center  md:grid md:place-items-center w-screen h-full flex-col md:mt-6 mt-4  ">
             {
               data.length > 0 && (
                 <>
-                <div className="md:shadow-md  md:flex md:h-full md:w-[70%] md:place-items-center h-[40%] w-[100%]flex flex-col border-2 border-[#eeeeee] border-solid ">
+                <div className="md:shadow-md  md:flex md:h-full md:w-[70%] md:place-items-center h-[40%]  flex flex-col border-2 border-[#eeeeee] border-solid ">
                   {data[0].items?.map((items,index)=>(
                   <div key={index} className="w-full h-full flex justify-between items-center ">
                     <img src={items.product.imageObjects[0].small} className='md:h-[7rem]  h-[6rem] mb-2' alt="" />
-                    <p className='text-xs w-[12rem] md:w-1/3 md:text-xl font-bold'> {items.product.name}</p>
+                    <p className='text-xs w-[12rem] md:w-1/3 md:text-xs font-bold'> {items.product.name}</p>
                     <span className='md:text-xl font-bold px-2 mr-1'>RS$ {items.product.priceSpecification.price}</span>
                   </div>
                 ))
               }</div>
-           <div className="md:shadow-md flex flex-col px-4 py-4 text-lg md:w-[70%] md:h-[70%] md:text-xl">
+           <div className="sm:m-auto w-screen md:shadow-md flex flex-col px-4 py-4 text-lg md:w-[70%] md:h-[70%] md:text-xl">
              <div className='flex justify-between'>
                <p>Produtos</p>
                <p>R$ {data[0].subTotal}</p>
@@ -62,7 +62,7 @@ const Wallet = () =>{
               <p>R$ {data[0].total}</p>
              </div>
           <div className='md:justify-center md:flex md:w-full flex justify-center items-center md:text-xl' >
-          <Link to='/payment'> <button className='bg-[#9222DC] h-[3.5rem] w-[80vw] rounded-xl md:w-[40vw]  text-white p-3 text-xl mt-5'>Seguir para o pagamento</button> </Link>
+              <Link to='/payment' className='bg-[#9222DC] h-[3.5rem] w-[80vw] rounded-xl md:w-[40vw] text-center text-white p-3 text-xl mt-5'> <button className=''>Seguir para o pagamento</button> </Link>
           </div>
           </div>
           </>
