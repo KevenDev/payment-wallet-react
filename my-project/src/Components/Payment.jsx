@@ -45,9 +45,9 @@ const Payment = () => {
   return (
     <section className="w-screen h-[90vh] flex flex-col mt-2">
     <form onSubmit={handleSubmit}>
-      <div className="w-screen h-[60%]  border-2 border-[#CCCCCC] border-solid p-4 font-mediun">
+      <div className=" md:w-[30%] md:mx-auto md:mt-2 w-screen h-[60%]  border-2 border-[#CCCCCC] border-solid p-4 font-mediun">
         <h1 className="text-2xl">Cartão de crédito</h1>
-        <label className="flex flex-col mt-1 text-[#515151]">
+        <label className="md:mt-5 flex flex-col mt-1 text-[#515151]">
           Número:
           <input maxLength={16} onChange={(e)=> setCardNumber(e.target.value)} placeholder="0000 0000 0000 0000"  className={`h-[2.5rem] p-3 rounded-md border-2 ${isValid ? 'border-[#d6d6d6]' : 'border-red-500'} border-solid`} 
           type="text" />
@@ -67,14 +67,14 @@ const Payment = () => {
           </label>
           <label>
             Código CVV:
-            <input maxLength={3} onChange={(e)=>setCvc(e.target.value)} placeholder="000" className="h-[2.5rem] rounded-md border-2 border-[#d6d6d6] border-solid p-3  w-[10rem]" type="text" name="name" />
+            <input maxLength={3} onChange={(e)=>setCvc(e.target.value)} placeholder="000" className="h-[2.5rem] rounded-md border-2 border-[#d6d6d6] border-solid p-3  md:w-[8rem] w-[10rem]" type="text" name="name" />
             {isValid ? null: <span className="text-red-500">insira um número de cartão válido</span> }
           </label>
         </div>
       </div>
       {data.length > 0 && (
         <>
-          <div className="flex flex-col px-4 py-4 text-lg ">
+          <div className=" md:w-[31%] md:h-[20vh] md:justify-center md:mx-auto flex flex-col px-4 py-4 text-lg ">
             <div className="flex justify-between">
               <p>Produtos</p>
               <p>R$ {data[0].subTotal}</p>
@@ -92,7 +92,7 @@ const Payment = () => {
               <p>R$ {data[0].total}</p>
             </div>
           </div>
-          <div className="flex justify-center items-center">
+          <div className="md:w-[30%] md:mx-auto flex justify-center items-center">
             <button type="submit" className="bg-[#9222DC] h-[3.5rem] w-[80vw] rounded-lg text-white p-3 text-xl mt-5">
               Finalizar pedido
             </button>
